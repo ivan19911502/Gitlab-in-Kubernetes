@@ -91,6 +91,8 @@ spec:
           mountPath: /var/opt/gitlab
         - name: gitlab-log
           mountPath: /var/log/gitlab
+        - name: gitlab-config         
+          mountPath: /etc/gitlab
       volumes:
       - name: gitlab-storage
         persistentVolumeClaim:
@@ -98,4 +100,7 @@ spec:
       - name: gitlab-log
         persistentVolumeClaim:
           claimName: gitlab-log-pvc
+      - name: gitlab-config        
+        persistentVolumeClaim:
+          claimName: gitlab-config-pvc
       
